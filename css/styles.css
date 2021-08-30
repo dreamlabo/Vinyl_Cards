@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; 
+}
+
+.main-container {
+    text-align: center;
+    width: 100%;
+    background-color: #E5D2B4;
+    height: fit-content;
+    min-height: 100vh;
+    font-family: "Raleway", sans-serif;
+    position: relative;
+    /* background-image: url("../images/turntable2.jpg"); */
+    background-size: 100% ;
+   
+    position: relative;
+    z-index: 1;
+}
+
+/* .main-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: #E5D2B4 ;
+    opacity: .5;
+    mix-blend-mode: multiply;
+} */
+
+.heading-one {
+    position: relative;
+    display: inline-block;
+    margin-top: 1em;
+    margin-right: 3em;
+    margin-left: 3em;
+    z-index: 0;
+}
+
+.heading-one::before,
+.heading-one::after{
+    content: "";
+    offset: 10px;
+    display: block;
+    position: absolute;
+    padding-right: 1em;
+}
+
+
+.heading-one::before{
+    background: #E5D2B4;
+    
+    left: -1em;
+    right: -1em;
+    height: 100%;
+    z-index: -1;
+}
+
+
+.heading-one::after{
+    background: #ED6A40;
+    width: 80vw;
+    height: .1em;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 1em;
+    
+    
+}
+
+
+.card {
+    position: relative;
+    border-radius: 5px;
+    height: 500px;
+    width: 350px;
+    min-width: 350px;
+    background-color: #522641;
+    color: #e9dac3;
+    /* color: rgb(221, 214, 214); */
+    margin-top:  2em;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0 , .3);
+    transition: top 500ms ease-in;
+}
+
+.card:hover {
+    box-shadow: 10px 5px 30px rgba(0, 0, 0 , .4);
+    top: -.4em
+}
+
+
+.product-name {
+    margin-top: .5em;
+}
+
+
+.card__image{
+    object-fit: cover;
+    width: 90%;
+    height: 35%;
+    display: block;
+    margin: 1em auto;
+    border-radius: 5px;
+    transition: opacity ease-out 250ms;
+    position: relative;
+}
+
+
+.card:focus,
+.card:hover
+.card__image {
+    opacity: .2;
+}
+
+
+.product__image__text {
+    position: absolute; 
+    top: 28%;
+    left: 10%;
+    transform: translateY(-50%);
+    padding: .2em;
+    line-height: 1.2em;
+    text-align: left;
+    list-style: none;  
+}
+
+
+.product__image__text li {
+    padding: .2em 0;
+    opacity: 0;
+    transition: opacity ease-in 250ms;
+}
+
+
+.card:hover 
+.product__image__text li {
+    opacity: 1;
+}
+
+.product__image__text__right {
+    position: absolute;
+    white-space: nowrap;
+    left: 110%;  
+}
+
+
+.product-description{
+    text-align: left;
+    margin: 1em;
+    font-size: 1rem;
+    line-height: 1.25em;
+    min-height: 35%;
+}
+
+.btn{
+    position: relative;
+    text-decoration: none;
+    padding: .4em 1em;
+    cursor: pointer;
+    transition: color 250ms ease-in;
+}
+
+.btn:hover{
+    color: #ED6A40;
+}
+
+.btn::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: -1px; /*Not sure why this is needed, but without it, the line drops to 1px at th eend of the transition in*/
+    width: 100%;
+    height: 2px;
+    background: #ED6A40;
+    transform: scaleX(0);
+    transform-origin: left; 
+    transition: transform 250ms ease-in-out;   
+}
+
+
+.btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+
+.btn::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #ED6A40;
+    transform: scaleX(0);
+    transform-origin: right; 
+    transition: transform 250ms ease;   
+}
+
+
+.btn:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+
