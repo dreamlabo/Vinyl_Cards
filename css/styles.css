@@ -6,30 +6,25 @@
     margin: 0; 
 }
 
+:root {
+    --primary-dark-clr: #522641;
+    --primary-light-clr: #E5D2B4;
+    --primary-accent-clr: #ED6A40;
+}
+
 .main-container {
     text-align: center;
     width: 100%;
-    background-color: #E5D2B4;
+    background-color: var(--primary-light-clr);
     height: fit-content;
     min-height: 100vh;
     font-family: "Raleway", sans-serif;
     position: relative;
-    /* background-image: url("../images/turntable2.jpg"); */
     background-size: 100% ;
-   
     position: relative;
     z-index: 1;
 }
 
-/* .main-container::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: #E5D2B4 ;
-    opacity: .5;
-    mix-blend-mode: multiply;
-} */
 
 .heading-one {
     position: relative;
@@ -51,8 +46,7 @@
 
 
 .heading-one::before{
-    background: #E5D2B4;
-    
+    background: var(--primary-light-clr);
     left: -1em;
     right: -1em;
     height: 100%;
@@ -61,7 +55,7 @@
 
 
 .heading-one::after{
-    background: #ED6A40;
+    background: var(--primary-accent-clr);
     width: 80vw;
     height: .1em;
     left: 50%;
@@ -76,8 +70,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding-top: 1em;
-    
-    
 }
 
 
@@ -87,17 +79,23 @@
     height: 500px;
     width: 350px;
     min-width: 350px;
-    background-color: #522641;
+    background-color: var(--primary-dark-clr);
     color: #e9dac3;
-    /* color: rgb(221, 214, 214); */
     margin-top:  2em;
     box-shadow: 10px 5px 10px rgba(0, 0, 0 , .3);
     transition: top 500ms ease-in;
 }
 
 .card:hover {
-    box-shadow: 10px 5px 30px rgba(0, 0, 0 , .4);
+    /* box-shadow: 10px 5px 30px rgba(0, 0, 0 , .4); */
     top: -.4em
+}
+
+
+@media only screen and (max-width: 720px) {
+    .card:hover {
+        top: 0;
+    }
 }
 
 
@@ -173,7 +171,7 @@
 }
 
 .btn:hover{
-    color: #ED6A40;
+    color: var(--primary-accent-clr);
 }
 
 .btn::before {
@@ -183,7 +181,7 @@
     top: -1px; /*Not sure why this is needed, but without it, the line drops to 1px at th eend of the transition in*/
     width: 100%;
     height: 2px;
-    background: #ED6A40;
+    background: var(--primary-accent-clr);
     transform: scaleX(0);
     transform-origin: left; 
     transition: transform 250ms ease-in-out;   
@@ -203,7 +201,7 @@
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #ED6A40;
+    background: var(--primary-accent-clr);
     transform: scaleX(0);
     transform-origin: right; 
     transition: transform 250ms ease;   
