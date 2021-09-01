@@ -12,3 +12,9 @@ The product details are hard coded, but could easily be converted for use with a
   * HTML
   * CSS3
   * VS Code
+ 
+ 
+https://youtu.be/IDKDse2Wnw0 
+ 
+ 
+ 
